@@ -1,0 +1,66 @@
+﻿@model ApplicationCore.Models.MovieDetailsModel
+
+<div class="container-fluid">
+	<div class="row bg-image" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(@Model.BackdropUrl); background-size:cover; background-repeat: no-repeat;">
+		<div class="col-4">
+			<img src="@Model.PosterUrl" class="img-fluid" alt="@Model.Title" width="70%" style="float:right;" />
+		</div>
+		<div class="col-4" style="margin-left:4em;">
+			<h2 class="text-white">
+				@Model.Title
+			</h2>
+			<div style="font-size: 10px; color:lightgray;">
+				@Model.Tagline
+			</div>
+			<div style="font-size: 12px;"><span style="float:left; color:lightgray;">@Model.RunTime m</span>
+				@foreach (var Genre in @Model.Genres)
+                 {
+				<span style="float:right; margin:2.5px;" class="badge bg-secondary">@Genre.Name</span>
+				 }
+			 </div>
+			 <br/>
+			 <div style="font-size: 12px;" class="text-white">
+				 <span>@Model.Overview</span>
+			 </div>
+		</div>
+		<div class="col-3">
+				<button type="button" class="btn btn-outline-light" style="width:75%; margin-top:20px;">Review</button>
+				<br />
+				<button type="button" class="btn btn-outline-light" style="width:75%; margin-top:20px;">Buy $@Model.Price</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-4">
+			<ul class="list-group">
+				<li class="list-group-item"><h4>Movie Facts</h4></li>
+				<li class="list-group-item">Release Date <span class="badge bg-secondary">@Model.ReleaseDate</span> </li>
+				<li class="list-group-item">Run Time <span class="badge bg-secondary">@Model.RunTime m</span></li>
+				<li class="list-group-item">Box office <span class="badge bg-secondary">$@Model.Revenue</span></li>
+				<li class="list-group-item">Budget <span class="badge bg-secondary">$@Model.Budget</span></li>
+				<li class="list-group-item"><a href="@Model.ImdbUrl">Imdb</a></li>
+				<li class="list-group-item"><a href="@Model.TmdbUrl">Tbmd</a></li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item"><h4>Trailers</h4></li>
+				@foreach (var Trailer in @Model.Trailers)
+                {
+				<li class="list-group-item"><a href="@Trailer.TrailerUrl">Trailer</a></li>
+				}
+			</ul>
+		</div>
+		<div class="col-4" style="margin-left:4em;">
+			<ul class="list-group">
+				<li class="list-group-item"><h4>Cast</h4></li>
+				@foreach (var Casts in @Model.Casts)
+                {
+				<ul class="list-group list-group-horizontal">
+					<li class="list-group-item"><a asp-controller="Cast" asp-action="Details" asp-route-id="@Casts.Id"><img src="@Casts.ProfilePath" width="30px"/></a></li>
+					<li class="list-group-item">@Casts.Name</li>
+					<li class="list-group-item">@Casts.Character</li>
+				</ul>
+				}
+			</ul>
+		</div>
+	</div>
+</div>

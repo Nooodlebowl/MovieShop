@@ -1,0 +1,28 @@
+﻿@model ApplicationCore.Models.CastDetailsModel
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-4">
+			<img src="@Model.ProfilePath" class="img-fluid"/>
+		</div>
+		<div class="col-4">
+			<ul class="list-group">
+				<li class="list-group-item"><h4>Cast Information</h4></li>
+				<li class="list-group-item">Name: @Model.Name</li>
+				<li class="list-group-item">Gender: @Model.Gender</li>
+				<li class="list-group-item"><a href="@Model.TmdbUrl">Tmdb</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-1">
+
+		</div>
+		<div class="col-10">
+			@foreach (var movies in @Model.Movies)
+            {
+				<a asp-controller="Movies" asp-action="Details" asp-route-id="@movies.Id"><img src="@movies.PosterUrl"/></a>
+			}
+		</div>
+	</div>
+</div>

@@ -1,4 +1,5 @@
-﻿using Infrastructure.Services;
+﻿using ApplicationCore.ServiesContracts;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using MovieShopMVC.Models;
 using System.Diagnostics;
@@ -8,24 +9,28 @@ namespace MovieShopMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMovieService _movieService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMovieService movieService)
         {
             _logger = logger;
+            _movieService = movieService;
+            //this is still hard coding even if it is a layer up
+            //_movieService = new MovieService();
         }
 
         //action methods inside the controller
         //page opens up (routing) to "index" by default because of program.cs
         [HttpGet]
         //good practice to denote the type of http request
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //it only returns view but if you open the view folder there is 2 views
             //how does it know to open the index one?
 
             //passing data from controller/action methods to views, through c# models
-            var movieService = new MovieService();
-            var movieCards = movieService.GetTopRevenueMovies();
+            //var movieService = new MovieService();
+            var movieCards = await _movieService.GetTopRevenueMovies();
             return View(movieCards);
             //going to pick a view with the same method name
         }
