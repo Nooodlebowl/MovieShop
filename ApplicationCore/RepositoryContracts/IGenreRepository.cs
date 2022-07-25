@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.RepositoryContracts
 {
-    public interface ICastRepository
+    public interface IGenreRepository
     {
-        Task<Cast> GetById(int id);
+        Task<List<Genre>> GetAllGenre();
     }
 }

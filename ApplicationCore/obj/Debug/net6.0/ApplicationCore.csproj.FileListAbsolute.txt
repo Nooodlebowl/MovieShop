@@ -1,0 +1,12 @@
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\bin\Debug\net6.0\ApplicationCore.deps.json
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\bin\Debug\net6.0\ApplicationCore.dll
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\bin\Debug\net6.0\ApplicationCore.pdb
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\refint\ApplicationCore.dll
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll

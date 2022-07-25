@@ -13,10 +13,10 @@ namespace ApplicationCore.RepositoryContracts
         //use Movie Entity
 
         // method to get top 30 highest grossing movie
-        List<Movie> GetTop30HighestRevenueMovies();
+        Task<List<Movie>> GetTop30HighestRevenueMovies();
 
-        List<Movie> GetTop30RatedMovies();
+        Task<List<Movie>> GetTop30RatedMovies();
         
-        Movie GetById(int id);
+        Task<Movie> GetById(int id);
     }
 }
