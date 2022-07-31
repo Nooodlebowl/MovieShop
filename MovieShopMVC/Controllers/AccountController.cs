@@ -24,7 +24,7 @@ namespace MovieShopMVC.Controllers
         {
             //user can enter info
             //service, needs to hash the password then save in database
-            var user = _accountService.CreateUser(model);
+            var user = await _accountService.CreateUser(model);
             return RedirectToAction("Login");
         }
 
@@ -42,7 +42,7 @@ namespace MovieShopMVC.Controllers
             {
                 return View(model);
             }
-            return RedirectToAction("~/");
+            return LocalRedirect("~/");
             
         }
     }
