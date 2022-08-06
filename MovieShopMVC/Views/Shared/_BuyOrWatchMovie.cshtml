@@ -1,0 +1,44 @@
+﻿@using MovieShopMVC.Infra
+@using ApplicationCore.RepositoryContracts
+@inject ICurrentUser currentUser
+@model ApplicationCore.Models.MovieDetailsModel
+@inject IPurchaseRepository purchaseRepository
+
+@if (currentUser.IsAuthenticated)
+{
+	@if(purchaseRepository.IsMoviePurchased(currentUser.UserId, @Model.Id).Result)
+	{
+		<button type="button" class="btn btn-outline-light" style="width:75%; margin-top:20px;" data-bs-toggle="modal" data-bs-target="#BuyModal">Watch Movie</button>
+	}
+	else{
+	<button type="button" class="btn btn-outline-light" style="width:75%; margin-top:20px;" data-bs-toggle="modal" data-bs-target="#BuyModal">Buy $@Model.Price</button>
+	<div class="modal fade" id="BuyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Buy @Model.Title for $@Model.Price
+				</div>
+				<div class="modal-footer">
+					<form asp-controller="User" asp-action="BuyMovie" method="post">
+						<input name="movieId" type="hidden" value="@Model.Id" />
+						<input name="price" type="hidden" value="@Model.Price" />
+						<input name="userId" type="hidden" value="@currentUser.UserId" />
+						<input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Close">
+						<input type="submit" value="Buy Movie" class="btn btn-primary" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	}
+
+}
+else
+{
+	<a type="button" class="btn btn-outline-light" style="width:75%; margin-top:20px;" asp-controller="Account" asp-action="Login">Buy $@Model.Price</a>
+}
+

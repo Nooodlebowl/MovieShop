@@ -1,0 +1,30 @@
+﻿@using MovieShopMVC.Infra
+@using ApplicationCore.RepositoryContracts
+@inject ICurrentUser currentUser
+@model ApplicationCore.Models.MovieDetailsModel
+@inject IFavoriteRepository favoriteRepository
+@if (currentUser.IsAuthenticated)
+{
+	@if(favoriteRepository.DoesFavoriteExist(currentUser.UserId, @Model.Id).Result)
+	{
+		<form asp-controller="User" asp-action="RemoveFavoriteMovie">
+		<input name="movieId" type="hidden" value="@Model.Id" />
+		<input name="userId" type="hidden" value="@currentUser.UserId" />
+		<button type="submit" class="btn btn-outline-danger" style="width:75%; margin-top:20px;">&#10084;</button>
+		</form>
+	}
+	else{
+	<form asp-controller="User" asp-action="FavoriteMovie">
+	<input name="movieId" type="hidden" value="@Model.Id" />
+	<input name="userId" type="hidden" value="@currentUser.UserId" />
+	<button type="submit" class="btn btn-outline-danger" style="width:75%; margin-top:20px;">&#9825;</button>
+	</form>
+	
+	}
+
+}
+else
+{
+	<a type="button" class="btn btn-outline-danger" style="width:75%; margin-top:20px;" asp-controller="Account" asp-action="Login"><i class="bi bi-heart"></i></a>
+}
+
