@@ -63,3 +63,5 @@ C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\MovieS
 C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\MovieShopAPI\obj\Debug\net6.0\MovieShopAPI.pdb
 C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\MovieShopAPI\obj\Debug\net6.0\MovieShopAPI.genruntimeconfig.cache
 C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\MovieShopAPI\obj\Debug\net6.0\ref\MovieShopAPI.dll
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\MovieShopAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\zacha\OneDrive\Desktop\antra\Day 15 (start of Asp.net)\MovieShop\MovieShopAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
